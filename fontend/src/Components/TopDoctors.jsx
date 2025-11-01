@@ -61,7 +61,7 @@ const TopDoctors = () => {
   };
 
   return (
-    <div className="bg-[#0B4A7A] py-16 flex flex-col items-center text-white relative overflow-hidden">
+    <div className="bg-[#18528f] py-16 flex flex-col items-center text-white relative overflow-hidden">
       <h1 className="text-5xl font-semibold mb-2">Seha Doctors</h1>
       <p className="text-md opacity-90 mb-8 text-center w-[80%] md:w-[40%]">
         Simply browse through our extensive list of trusted doctors.
@@ -98,7 +98,7 @@ const TopDoctors = () => {
           ))}
         </div>
 
-        {/* ✅ Bottom Control Row */}
+        {/* Bottom Control Row */}
         <div className="w-full max-w-[1200px] flex justify-between items-center mt-6 px-4">
           {/* Left Buttons */}
           <div className="flex gap-4">
