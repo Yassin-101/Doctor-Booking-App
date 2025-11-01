@@ -24,9 +24,6 @@ const Insurance = () => {
           <h1 className="text-4xl md:text-6xl font-semibold text-[#0B4A7A] leading-tight">
             Insurance <br /> Partners
           </h1>
-          <button className="mt-6 text-[#0B4A7A] underline hover:text-blue-700 transition">
-            See All Partners ↗
-          </button>
         </div>
 
         {/* RIGHT SIDE */}
@@ -36,7 +33,7 @@ const Insurance = () => {
               key={index}
               src={partner.logo}
               alt={partner.name}
-              className="h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
+              className="h-32 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
             />
           ))}
         </div>
