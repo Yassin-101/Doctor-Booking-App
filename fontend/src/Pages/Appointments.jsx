@@ -7,6 +7,7 @@ const Appointments = () => {
   
   const {docId} = useParams()
   const {doctors, currencySymbol} = useContext(AppContext)
+  const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
   const [docInfo,setDocInfo] = useState(null) // to save docInfo
   const [docSlots,setDocSlots] = useState([])
@@ -34,7 +35,7 @@ const Appointments = () => {
 
         // setting end time of the date with index
         let endTime  = new Date()
-        endTime.setDate(today.getDate()+1)
+        endTime.setDate(today.getDate()+i)
         endTime.setHours(21,0,0,0)
 
         // setting hours
@@ -104,6 +105,21 @@ const Appointments = () => {
             Appointment fee: <span><span className='mr-1'>{currencySymbol}</span>{docInfo.fees}</span>
           </p>
         </div>
+      </div>
+
+
+      {/* Booking slots */}
+      <div className='sm:ml-72 sm:ml-4 mt-4 font-medium text-blue-500'>
+        <p>Booking Slots</p>
+        <div>
+          {docSlots.length && docSlots.map((item,index)=>(
+            <div key={index}>
+                <p>{item[0] && daysOfWeek[item[0].dateTime.getDay()]}</p>
+                <p>{item[0] && item[0].dateTime.getDate()}</p>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   )
