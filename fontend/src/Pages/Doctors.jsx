@@ -22,20 +22,20 @@ const Doctors = () => {
         applyFilter()
   },[doctors,speciality])  // this will be executed if any of them gets changed
   return (
-    <div>
-      <p className='text-black'>Our Doctors</p>
-      <p>Book <span className='text-[#18528f]'>an Appointment</span></p>
-      <div>
-        <div>
-            <p>General Physician</p>
-            <p>Gynecologist</p>
-            <p>Dermatologist</p>
-            <p>Pediatricians</p>
-            <p>Neurologist</p>
-            <p>Gastroenterologist</p>
+    <div className='mt-30 mx-4 sm:mx-[10%]'>
+      <p className='text-[#18528f] font-medium'>Our Doctors</p>
+      <p className='text-blue-300 text-6xl'>Book <span className='text-[#18528f]'>an Appointment</span></p>
+      <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
+        <div className='flex-col gap-4 text-sm text-[#18528f] '>
+            <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>General Physician</p>
+            <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Gynecologist</p>
+            <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Dermatologist</p>
+            <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Pediatricians</p>
+            <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Neurologist</p>
+            <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Gastroenterologist</p>
         </div>
             {/* doctors card */}
-        <div>
+        <div className='w-full grid grid-cols-4 gap-y-6'>
             {
               filterDoc.map((item, index) => (
             <div
