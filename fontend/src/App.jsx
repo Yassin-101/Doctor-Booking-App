@@ -14,24 +14,24 @@ import Footer from './Components/Footer'
 import LoadingBar from './Components/LoadingBar'
 
 const App = () => {
-    const location = useLocation()
-  const [loading, setLoading] = useState(false)
+  //   const location = useLocation()
+  // const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    // Trigger loading when route changes
-    setLoading(true)
-    document.title = 'Loading... | STMC'
+  // useEffect(() => {
+  //   // Trigger loading when route changes
+  //   setLoading(true)
+  //   document.title = 'Loading... | STMC'
 
-    const timer = setTimeout(() => {
-      setLoading(false)
-      document.title = 'STMC' // You can make this dynamic per route if you want
-    }, 1000)
+  //   const timer = setTimeout(() => {
+  //     setLoading(false)
+  //     document.title = 'STMC' // You can make this dynamic per route if you want
+  //   }, 1000)
 
-    return () => clearTimeout(timer)
-  }, [location.pathname])
+  //   return () => clearTimeout(timer)
+  // }, [location.pathname])
   return (
     <div className=''>
-      <LoadingBar active={loading}/>
+      {/* <LoadingBar active={loading}/> */}
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
