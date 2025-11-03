@@ -9,6 +9,7 @@ const Navbar = () => {
   const navRef = useRef(null)
   const [navHeight, setNavHeight] = useState(0)
   const [token, SetToken] = useState(true)
+  const [showMenu, setShowMeu] = useState(false)
 
   const isHomePage = location.pathname === '/'
 
@@ -74,6 +75,21 @@ const Navbar = () => {
                 Create Account
               </button>
             )}
+
+            <img onClick={() => setShowMeu(true)} className='w-6 md:hidden' src={assets.menu_icon} alt="" />
+            {/* mobile menu */}
+            <div className={`${showMenu ? "fixed w-full" : "h-0 w-0"} md:hidden right-0 bottom-0 top-0 z-20 overflow-hidden bg-white transition-all`}>
+              <div className='flex items-center justify-between px-5 py-6'>
+                <img onClick={() => navigate('/')} className='w-28' src={logo} />
+                <img className='w-7' onClick={() => setShowMeu(false)} src={assets.cross_icon} alt="" />
+              </div>
+              <ul className='text-black flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
+                <NavLink  onClick={() => setShowMeu(false)} to={'/'}><p className='px-4 py-2 rounded inline-block'>HOME</p></NavLink>
+                <NavLink  onClick={() => setShowMeu(false)} to={'/doctors'}><p className='px-4 py-2 rounded inline-block'>ALL DOCTORS</p></NavLink>
+                <NavLink  onClick={() => setShowMeu(false)} to={'/about'}><p className='px-4 py-2 rounded inline-block'>ABOUT</p></NavLink>
+                <NavLink  onClick={() => setShowMeu(false)} to={'/contact'}><p className='px-4 py-2 rounded inline-block'>CONTACT</p></NavLink>
+              </ul>
+            </div>
           </div>
         </div>
       </header>
